@@ -11,8 +11,21 @@
 
 <body>
 
-<header>
-    <div class="logo">Ghori's Collection</div>
+
+    <header>
+        <div class="search-bar">
+            <input
+                    type="text"
+                    id="product-search"
+                    placeholder="Search products..."
+            >
+
+            <button onclick="searchProducts()">🔍 Search</button>
+        </div>
+
+
+
+        <div class="logo">Ghori's Collection</div>
 
     <nav>
         <a href="#">Home</a>
@@ -22,8 +35,11 @@
         <a href="cart.html" id="cart">🛒 Cart (0)</a>
     </nav>
 </header>
+    <p id="no-results" style="display: none; text-align: center;">
+        🔍 No products found
+    </p>
 
-<section class="hero">
+    <section class="hero">
     <h1>Style For Every Occasion</h1>
     <p>Discover beautiful women's clothing and adorable kids wear.</p>
     <a href="#" class="shop-button">Shop Now</a>
@@ -41,6 +57,9 @@
                 <h3>Elegant Women's Dress</h3>
                 <p class="price">₹999</p>
                 <button onclick="addToCart('Elegant Women\'s Dress', 999)">Add to Cart</button>
+                <button onclick="viewProduct('Elegant Women\'s Dress', 999)">
+                    View Details
+                </button>
             </div>
 
             <div class="product-card">

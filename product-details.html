@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Details - Ghori's Collection</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Ghori's Collection</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#women">Women</a>
+        <a href="index.html#kids">Kids</a>
+        <a href="index.html#new-arrivals">New Arrivals</a>
+        <a href="cart.html">🛒 Cart</a>
+    </nav>
+</header>
+
+<section class="product-details">
+
+    <div class="product-details-image">
+        👗
+    </div>
+
+    <div class="product-details-info">
+        <h1 id="product-name">Elegant Women's Dress</h1>
+
+        <p class="product-details-price" id="product-price">
+            ₹999
+        </p>
+
+        <p>
+            Beautiful and stylish women's dress, perfect for
+            casual and special occasions.
+        </p>
+
+        <h3>Available Sizes</h3>
+
+
+        <button class="size-button" onclick="selectSize(this)">M</button>
+        <button class="size-button" onclick="selectSize(this)">L</button>
+        <button class="size-button" onclick="selectSize(this)">XL</button>
+        <button class="size-button" onclick="selectSize(this)">XXL</button>
+
+        <br><br>
+        <button onclick="addToCart('Elegant Women\'s Dress', 999)">
+
+        <button onclick="window.location.href='index.html'">
+            Continue Shopping
+        </button>
+    </div>
+
+</section>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
