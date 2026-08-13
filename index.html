@@ -3,153 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Ghori's Collection</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
-
-<body>
-
-
-    <header>
-        <div class="search-bar">
-            <input
-                    type="text"
-                    id="product-search"
-                    placeholder="Search products..."
-            >
-
-            <button onclick="searchProducts()">🔍 Search</button>
-        </div>
-
-
-
+<body data-page="home">
+    <header class="site-header">
         <div class="logo">Ghori's Collection</div>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#women">Women</a>
-        <a href="#kids">Kids</a>
-        <a href="#new-arrivals">New Arrivals</a>
-        <a href="cart.html" id="cart">🛒 Cart (0)</a>
-    </nav>
-</header>
-    <p id="no-results" style="display: none; text-align: center;">
-        🔍 No products found
-    </p>
+        <nav class="site-nav" aria-label="Primary navigation">
+            <a href="index.html">Home</a>
+            <a href="#women">Women</a>
+            <a href="#kids">Kids</a>
+            <a href="#collections">Collections</a>
+            <a href="cart.html" id="cart-link">Cart (<span id="cart-count">0</span>)</a>
+        </nav>
+    </header>
 
-    <section class="hero">
-    <h1>Style For Every Occasion</h1>
-    <p>Discover beautiful women's clothing and adorable kids wear.</p>
-    <a href="#" class="shop-button">Shop Now</a>
-</section>
-
-<section class="categories">
-    <section class="products" id="women">
-
-        <h2>Women's Collection</h2>
-
-        <div class="product-container">
-
-            <div class="product-card">
-                <div class="product-image">👗</div>
-                <h3>Elegant Women's Dress</h3>
-                <p class="price">₹999</p>
-                <button onclick="addToCart('Elegant Women\'s Dress', 999)">Add to Cart</button>
-                <button onclick="viewProduct('Elegant Women\'s Dress', 999)">
-                    View Details
-                </button>
+    <main>
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">Curated everyday style</p>
+                <h1>Style for every occasion</h1>
+                <p>Discover women's fashion and kids wear designed for comfort, color, and repeat use.</p>
+                <a href="#women" class="shop-button">Shop now</a>
             </div>
+        </section>
 
-            <div class="product-card">
-                <div class="product-image">🥻</div>
-                <h3>Designer Ethnic Suit</h3>
-                <p class="price">₹1,299</p>
-                <button onclick="addToCart('Designer Ethnic Suit', 1299)">Add to Cart</button>
+        <section class="search-box" aria-label="Product search">
+            <input
+                type="search"
+                id="product-search"
+                placeholder="Search products"
+                aria-label="Search products"
+            >
+            <button type="button" onclick="searchProducts()">Search</button>
+        </section>
+
+        <p id="no-results" class="no-results" hidden>No products found.</p>
+
+        <section class="products" id="women">
+            <h2>Women's Collection</h2>
+            <div class="product-container">
+                <article class="product-card" data-name="Elegant Women's Dress">
+                    <div class="product-image" aria-hidden="true">Dress</div>
+                    <h3>Elegant Women's Dress</h3>
+                    <p class="price">Rs. 999</p>
+                    <p class="product-copy">A versatile silhouette for small gatherings and festive evenings.</p>
+                    <div class="product-actions">
+                        <button type="button" onclick="viewProductById('elegant-womens-dress')">View details</button>
+                        <button type="button" onclick="addToCartById('elegant-womens-dress')">Add to cart</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-name="Designer Ethnic Suit">
+                    <div class="product-image" aria-hidden="true">Suit</div>
+                    <h3>Designer Ethnic Suit</h3>
+                    <p class="price">Rs. 1,299</p>
+                    <p class="product-copy">Tailored ethnic wear with easy movement and a refined finish.</p>
+                    <div class="product-actions">
+                        <button type="button" onclick="viewProductById('designer-ethnic-suit')">View details</button>
+                        <button type="button" onclick="addToCartById('designer-ethnic-suit')">Add to cart</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-name="Stylish Women's Kurti">
+                    <div class="product-image" aria-hidden="true">Kurti</div>
+                    <h3>Stylish Women's Kurti</h3>
+                    <p class="price">Rs. 799</p>
+                    <p class="product-copy">Breathable fabric and everyday styling for work or casual wear.</p>
+                    <div class="product-actions">
+                        <button type="button" onclick="viewProductById('stylish-womens-kurti')">View details</button>
+                        <button type="button" onclick="addToCartById('stylish-womens-kurti')">Add to cart</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-name="Printed Dupatta">
+                    <div class="product-image" aria-hidden="true">Dupatta</div>
+                    <h3>Printed Dupatta</h3>
+                    <p class="price">Rs. 499</p>
+                    <p class="product-copy">A light layer that adds color without adding bulk.</p>
+                    <div class="product-actions">
+                        <button type="button" onclick="viewProductById('printed-dupatta')">View details</button>
+                        <button type="button" onclick="addToCartById('printed-dupatta')">Add to cart</button>
+                    </div>
+                </article>
             </div>
+        </section>
 
-            <div class="product-card">
-                <div class="product-image">👚</div>
-                <h3>Stylish Women's Kurti</h3>
-                <p class="price">₹799</p>
-                <button onclick="addToCart()">Add to Cart</button>
+        <section class="products" id="kids">
+            <h2>Kids Wear</h2>
+            <div class="product-container">
+                <article class="product-card" data-name="Kids Casual Outfit">
+                    <div class="product-image" aria-hidden="true">Kids</div>
+                    <h3>Kids Casual Outfit</h3>
+                    <p class="price">Rs. 599</p>
+                    <p class="product-copy">Soft fabric and an easy fit for daily activity.</p>
+                    <div class="product-actions">
+                        <button type="button" onclick="viewProductById('kids-casual-outfit')">View details</button>
+                        <button type="button" onclick="addToCartById('kids-casual-outfit')">Add to cart</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-name="Girls Party Dress">
+                    <div class="product-image" aria-hidden="true">Party</div>
+                    <h3>Girls Party Dress</h3>
+                    <p class="price">Rs. 899</p>
+                    <p class="product-copy">A bright party look designed to stay comfortable for longer hours.</p>
+                    <div class="product-actions">
+                        <button type="button" onclick="viewProductById('girls-party-dress')">View details</button>
+                        <button type="button" onclick="addToCartById('girls-party-dress')">Add to cart</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-name="Kids Ethnic Wear">
+                    <div class="product-image" aria-hidden="true">Ethnic</div>
+                    <h3>Kids Ethnic Wear</h3>
+                    <p class="price">Rs. 799</p>
+                    <p class="product-copy">Festive styling with enough room for movement and play.</p>
+                    <div class="product-actions">
+                        <button type="button" onclick="viewProductById('kids-ethnic-wear')">View details</button>
+                        <button type="button" onclick="addToCartById('kids-ethnic-wear')">Add to cart</button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-name="Girls Cotton Dress">
+                    <div class="product-image" aria-hidden="true">Cotton</div>
+                    <h3>Girls Cotton Dress</h3>
+                    <p class="price">Rs. 699</p>
+                    <p class="product-copy">A low-maintenance cotton staple for warm days.</p>
+                    <div class="product-actions">
+                        <button type="button" onclick="viewProductById('girls-cotton-dress')">View details</button>
+                        <button type="button" onclick="addToCartById('girls-cotton-dress')">Add to cart</button>
+                    </div>
+                </article>
             </div>
+        </section>
 
-            <div class="product-card">
-                <div class="product-image">🧣</div>
-                <h3>Printed Dupatta</h3>
-                <p class="price">₹499</p>
-                <button onclick="addToCart()">Add to Cart</button>
+        <section class="categories" id="collections">
+            <h2>Shop Our Collections</h2>
+            <div class="category-container">
+                <article class="category-card">
+                    <h3>Women's Clothing</h3>
+                    <p>Elegant ethnic wear, kurtis, dresses, and occasion-ready staples.</p>
+                    <a href="#women">Shop Women</a>
+                </article>
+
+                <article class="category-card">
+                    <h3>Kids Wear</h3>
+                    <p>Comfortable outfits built for movement, repeat wear, and easy care.</p>
+                    <a href="#kids">Shop Kids</a>
+                </article>
             </div>
+        </section>
+    </main>
 
-        </div>
-
-    </section><section class="products" id="kids">
-
-    <h2>Kids Wear</h2>
-
-    <div class="product-container">
-
-        <div class="product-card">
-            <div class="product-image">👕</div>
-            <h3>Kids Casual Outfit</h3>
-            <p class="price">₹599</p>
-            <button onclick="addToCart()">Add to Cart</button>
-        </div>
-
-        <div class="product-card">
-            <div class="product-image">👗</div>
-            <h3>Girls Party Dress</h3>
-            <p class="price">₹899</p>
-            <button onclick="addToCart()">Add to Cart</button>
-        </div>
-
-        <div class="product-card">
-            <div class="product-image">🧒</div>
-            <h3>Kids Ethnic Wear</h3>
-            <p class="price">₹799</p>
-            <button onclick="addToCart()">Add to Cart</button>
-        </div>
-
-        <div class="product-card">
-            <div class="product-image">👚</div>
-            <h3>Girls Cotton Dress</h3>
-            <p class="price">₹699</p>
-            <button onclick="addToCart()">Add to Cart</button>
-        </div>
-
-    </div>
-
-</section>
-
-    <h2>Shop Our Collections</h2>
-
-    <div class="category-container">
-
-        <div class="category-card">
-            <h3>👗 Women's Clothing</h3>
-            <p>Elegant ethnic wear, kurtis, suits and more.</p>
-            <br>
-            <a href="#">Shop Women →</a>
-        </div>
-
-        <div class="category-card">
-            <h3>🧒 Kids Wear</h3>
-            <p>Beautiful and comfortable styles for kids.</p>
-            <br>
-            <a href="#">Shop Kids →</a>
-        </div>
-
-    </div>
-
-</section>
-
-    <footer>
-        <p>© 2026 Ghori's Collection. All Rights Reserved.</p>
+    <footer class="site-footer">
+        <p>&copy; 2026 Ghori's Collection. All rights reserved.</p>
     </footer>
 
+    <script src="js/products.js"></script>
     <script src="js/script.js"></script>
-
 </body>
 </html>

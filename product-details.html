@@ -2,61 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Details - Ghori's Collection</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+<body data-page="details">
+    <header class="site-header">
+        <div class="logo">Ghori's Collection</div>
 
-<body>
+        <nav class="site-nav" aria-label="Primary navigation">
+            <a href="index.html">Home</a>
+            <a href="index.html#women">Women</a>
+            <a href="index.html#kids">Kids</a>
+            <a href="index.html#collections">Collections</a>
+            <a href="cart.html" id="cart-link">Cart (<span id="cart-count">0</span>)</a>
+        </nav>
+    </header>
 
-<header>
-    <div class="logo">Ghori's Collection</div>
+    <main>
+        <section class="product-details">
+            <div class="product-details-image" id="product-visual" aria-hidden="true">Item</div>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="index.html#women">Women</a>
-        <a href="index.html#kids">Kids</a>
-        <a href="index.html#new-arrivals">New Arrivals</a>
-        <a href="cart.html">🛒 Cart</a>
-    </nav>
-</header>
+            <div class="product-details-info">
+                <p class="eyebrow" id="product-category">Featured product</p>
+                <h1 id="product-name">Elegant Women's Dress</h1>
+                <p class="product-details-price">Rs. <span id="product-price">999</span></p>
+                <p id="product-description">Beautiful and stylish clothing for casual and special occasions.</p>
 
-<section class="product-details">
+                <div class="size-picker" id="size-picker">
+                    <h2>Select size</h2>
+                    <div class="size-options">
+                        <button class="size-button" type="button" onclick="selectSize(this)">S</button>
+                        <button class="size-button" type="button" onclick="selectSize(this)">M</button>
+                        <button class="size-button" type="button" onclick="selectSize(this)">L</button>
+                        <button class="size-button" type="button" onclick="selectSize(this)">XL</button>
+                    </div>
+                </div>
 
-    <div class="product-details-image">
-        👗
-    </div>
+                <div class="detail-actions">
+                    <button type="button" onclick="addSelectedProductToCart()">Add to cart</button>
+                    <button type="button" class="secondary-button" onclick="window.location.href='index.html'">Continue shopping</button>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <div class="product-details-info">
-        <h1 id="product-name">Elegant Women's Dress</h1>
-
-        <p class="product-details-price" id="product-price">
-            ₹999
-        </p>
-
-        <p>
-            Beautiful and stylish women's dress, perfect for
-            casual and special occasions.
-        </p>
-
-        <h3>Available Sizes</h3>
-
-
-        <button class="size-button" onclick="selectSize(this)">M</button>
-        <button class="size-button" onclick="selectSize(this)">L</button>
-        <button class="size-button" onclick="selectSize(this)">XL</button>
-        <button class="size-button" onclick="selectSize(this)">XXL</button>
-
-        <br><br>
-        <button onclick="addToCart('Elegant Women\'s Dress', 999)">
-
-        <button onclick="window.location.href='index.html'">
-            Continue Shopping
-        </button>
-    </div>
-
-</section>
-
-<script src="js/script.js"></script>
-
+    <script src="js/products.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

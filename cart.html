@@ -4,25 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart - Ghori's Collection</title>
-
     <link rel="stylesheet" href="css/style.css">
 </head>
+<body data-page="cart">
+    <header class="site-header">
+        <div class="logo">Ghori's Collection</div>
 
-<body>
+        <nav class="site-nav" aria-label="Primary navigation">
+            <a href="index.html">Home</a>
+            <a href="index.html#women">Women</a>
+            <a href="index.html#kids">Kids</a>
+            <a href="index.html#collections">Collections</a>
+            <a href="cart.html" id="cart-link">Cart (<span id="cart-count">0</span>)</a>
+        </nav>
+    </header>
 
-<h1>🛒 My Shopping Cart</h1>
+    <main class="cart-page">
+        <h1>My Shopping Cart</h1>
+        <div id="cart-items" aria-live="polite"></div>
+        <p id="empty-cart-message" class="empty-cart" hidden>Your cart is empty.</p>
 
-<div id="cart-items"></div>
+        <section class="cart-summary">
+            <h2>Total: Rs. <span id="cart-total">0</span></h2>
+            <div class="cart-actions">
+                <button type="button" onclick="goHome()">Continue shopping</button>
+                <button type="button" class="secondary-button" onclick="toggleCheckoutForm()">Proceed to checkout</button>
+            </div>
+        </section>
 
-<h2>
-    Total: ₹<span id="cart-total">0</span>
-</h2>
+        <section class="checkout-panel" id="checkout-panel" hidden>
+            <div class="checkout-copy">
+                <p class="eyebrow">Checkout</p>
+                <h2>Complete your order</h2>
+                <p>Enter delivery and payment details to place this order.</p>
+            </div>
 
-<button onclick="goHome()">Continue Shopping</button>
+            <form id="checkout-form" class="checkout-form">
+                <label>
+                    Full name
+                    <input type="text" id="customer-name" name="customerName" autocomplete="name" required>
+                </label>
 
-<button onclick="checkout()">Proceed to Checkout</button>
+                <label>
+                    Email address
+                    <input type="email" id="customer-email" name="customerEmail" autocomplete="email" required>
+                </label>
 
-<script src="js/script.js"></script>
+                <label>
+                    Phone number
+                    <input type="tel" id="customer-phone" name="customerPhone" autocomplete="tel" pattern="[0-9]{10}" required>
+                </label>
 
+                <label>
+                    Delivery address
+                    <textarea id="customer-address" name="customerAddress" rows="4" autocomplete="street-address" required></textarea>
+                </label>
+
+                <label>
+                    Payment method
+                    <select id="payment-method" name="paymentMethod" required>
+                        <option value="">Select a payment method</option>
+                        <option value="Cash on Delivery">Cash on Delivery</option>
+                        <option value="UPI">UPI</option>
+                        <option value="Card">Card</option>
+                    </select>
+                </label>
+
+                <button type="submit">Place order</button>
+            </form>
+
+            <p class="form-message" id="checkout-message" aria-live="polite"></p>
+        </section>
+
+        <section class="order-confirmation" id="order-confirmation" hidden>
+            <p class="eyebrow">Order placed</p>
+            <h2>Thank you for your purchase</h2>
+            <p id="order-summary"></p>
+        </section>
+    </main>
+
+    <script src="js/products.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
